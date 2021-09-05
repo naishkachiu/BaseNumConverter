@@ -4,7 +4,7 @@ while True:
   #Ask for an input number --> input_num
   input_num = str(input('Please enter number:'))
   #Prepare a variable for the final result
-  output_num = 0
+  output_num = 0 
 
   #loop through each character from input_num
   for char in range(len(input_num)):

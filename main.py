@@ -19,6 +19,9 @@ while True:
     #Create a library of just the numbers in the input_base
     input_library = digit_library[0:input_base]
 
+    # Print out some debug header information
+    print("place, digit, value base 10, running ttl")
+
     #loop through each character from input_num
     for char in range(len(input_num)):
       #check if digit is valid (not out of range)

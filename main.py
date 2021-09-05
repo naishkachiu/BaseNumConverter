@@ -1,5 +1,7 @@
 
 #Loop the program so that we ask for next number after finishing the last question
+#Create a library for mapping characters of all bases (up to 36)
+digit_library = [0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z]
 while True:
   #Ask for an input number --> input_num, and reverse it
   input_num = str(input('Please enter number:'))[::-1]

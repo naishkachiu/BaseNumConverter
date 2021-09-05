@@ -1,8 +1,8 @@
 
 #Loop the program so that we ask for next number after finishing the last question
 while True:
-  #Ask for an input number --> input_num
-  input_num = str(input('Please enter number:'))
+  #Ask for an input number --> input_num, and reverse it
+  input_num = str(input('Please enter number:'))[::-1]
   #Prepare a variable for the final result
   output_num = 0
 
@@ -11,7 +11,7 @@ while True:
     #if the character is valid
     if int(input_num[char]) <= 1:
       #Multiply the value by the base to the power of the place number --> this_place_value
-      this_place_value = int(input_num[char]) * (2**(len(input_num)-char-1))
+      this_place_value = int(input_num[char]) * (2**char)
 
       #Add this_place_value to the current output_num
       output_num += this_place_value

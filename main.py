@@ -10,7 +10,7 @@ while True:
   #Ask for base of output
   output_base = int(input('What base do you wish to output? (2-36)'))
   #Prepare a variable for the final result
-  output_num = 0
+  base10_num = 0
   input_library = digit_library[0:input_base]
 
   #loop through each character from input_num
@@ -20,14 +20,28 @@ while True:
       #Multiply the value by the base to the power of the place number --> this_place_value
       this_place_value = input_library.index(input_num[char]) * (input_base**char)
 
-      #Add this_place_value to the current output_num
-      output_num += this_place_value
+      #Add this_place_value to the current base10_num
+      base10_num += this_place_value
       # The following are for showing process and debugging
       # Print out the debug information
       print(char, input_num[char], this_place_value, 
-      output_num)
-  #Convert Decimal to Output Base
-  
+      base10_num)
 
-  #Print out the final output_num value
-  print('In base 10 this is: ', output_num)
+  #Print out the final base10_num value
+  print('In base 10 this is: ', base10_num)
+
+  #Convert Decimal to Output Base
+  output_num = ''
+  temp_quotient = base10_num
+  finished = (temp_quotient < output_base)
+  while (temp_quotient >= output_base):
+    temp_remainder = temp_quotient%output_base
+    output_num += digit_library[temp_remainder]
+    temp_quotient = int(temp_quotient / output_base)
+  temp_remainder = temp_quotient%output_base
+  output_num += digit_library[temp_remainder]
+
+  #Print the final answer
+  print('Answer in base ', output_base, ': ', output_num[::-1])
+  print('---')
+    
